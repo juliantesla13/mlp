@@ -70,18 +70,12 @@ def entrenaMLP(W,V,X,D,alpha):
 
 def main():
     W,V=creaMLP(2, 1, 30)
-    #X=np.random.rand(8,50)
-    #D=np.random.rand(2,50)
     X=np.array ([[0, 1, 0, 1], [0, 0, 1, 1]])
-    #X = [0 1 0 1; 0 0 1 1];
-    #print (nm)
     D=np.array([[0, 1, 1, 0]])
-    #print (nm1)
-    #entrenaMLP(W,V,X,D, 0.01)
-    #print (V.shape)
+    
     Y,R, Z=operaMLP(W,V,X)
     e= (sum ((sum(abs (D-Y)))))
-    print (e)
+    
     dietime=1
     while dietime <=10000:
         W,V=entrenaMLP(W,V,X,D, 0.001)
